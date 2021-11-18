@@ -1,4 +1,5 @@
-﻿using CK.Entities;
+﻿using CK.EF;
+using CK.Entities;
 
 namespace CK.PortfolioData
 {
@@ -8,7 +9,7 @@ namespace CK.PortfolioData
 
         Portfolio GetPortfolioById(Guid portfolioId);
 
-        Portfolio AddPortfolio(Portfolio portfolio);
+        Portfolio AddPortfolio(PortfolioPostModel portfolio);
 
         void DeletePortfolio(Portfolio portfolio);
     }

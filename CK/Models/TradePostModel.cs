@@ -2,20 +2,14 @@
 
 namespace CK.Entities
 {
-    public class Trade
+    public class TradePostModel
     {
-        public Trade()
-        {
 
-        }
-
-        [Key]
+        [Required]
         public Guid Id { get; set; }
 
         [Required] 
-        public DateTime Created { get; set; }
-
-        public DateTime Modified { get; set; }
+        public DateTime Created { get { return DateTime.Now; } }
 
         [Required]
         public Guid UserId { get; set; }
@@ -24,7 +18,7 @@ namespace CK.Entities
         public Guid PortfolioId { get; set; }
         
         [Required]
-        public string Date { get; set; }
+        public string Date { get { return Created.ToString("yyyy/MM/dd"); }}
 
         [Required]
         public decimal NumberOfShares { get; set; }

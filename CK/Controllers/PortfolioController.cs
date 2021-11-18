@@ -38,7 +38,7 @@ namespace CK.Controllers
 
 
         [HttpPost, Route("api/portfolio")]
-        public IActionResult AddPortfolio(Portfolio portfolio)
+        public IActionResult AddPortfolio(PortfolioPostModel portfolio)
         {
             //Get User
             //Compare if User exists

@@ -1,24 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 
-namespace CK.Entities
+namespace CK.EF
 {
-    public class Portfolio
+    public partial class Portfolio
     {
         public Portfolio()
         {
-            this.Trades = new HashSet<Trade>();
+            Trades = new HashSet<Trade>();
         }
 
-        [Key]
-        public Guid Id { get; set; }
+        public Guid PortfolioId { get; set; }
 
-        [Required]
+        public Guid UserId { get; set; }
+
         public decimal Balance => Trades.Where(t => t.Action == Action.Sell).Sum(t => t.MarketValue) -
             Trades.Where(t => t.Action == Action.Buy).Sum(t => t.MarketValue);
-
-        [Required]
-        public Guid UserId { get; set; }
 
         public virtual ICollection<Trade> Trades { get; set; }
     }

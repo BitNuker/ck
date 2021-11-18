@@ -2,20 +2,14 @@
 
 namespace CK.Entities
 {
-    public class User
+    public class UserPostModel
     {
-        public User()
-        {
 
-        }
-
-        [Key]
+        [Required]
         public Guid Id { get; set; }
 
         [Required]
-        public DateTime Created { get; set; }
-
-        public DateTime? Modified { get; set; }
+        public DateTime Created { get { return DateTime.Now; } }
 
         [Required]
         public string Username { get; set; }

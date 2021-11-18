@@ -11,6 +11,6 @@ namespace CK
 
     }
 
-    public DbSet<Portfolio> Portfolios { get; set; }
+    public DbSet<PortfolioPostModel> Portfolios { get; set; }
 }
 }
