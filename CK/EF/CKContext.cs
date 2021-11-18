@@ -9,6 +9,7 @@ namespace CK.EF
     {
         public CKContext()
         {
+
         }
 
         public CKContext(DbContextOptions<CKContext> options)
@@ -16,9 +17,9 @@ namespace CK.EF
         {
         }
 
-        public virtual DbSet<Portfolio> Portfolios { get; set; } = null!;
-        public virtual DbSet<Trade> Trades { get; set; } = null!;
-        public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<Portfolio> Portfolios { get; set; }
+        public virtual DbSet<Trade> Trades { get; set; } 
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

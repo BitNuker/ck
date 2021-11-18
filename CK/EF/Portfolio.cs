@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CK.EF
 {
@@ -21,6 +22,7 @@ Trades.Where(t => t.Action == Action.Buy).Sum(t => t.MarketValue);
 
         public virtual ICollection<Trade> Trades { get; set; }
 
+        [ForeignKey("UserID")]
         public virtual User User { get; set; } = null!;
     }
 }

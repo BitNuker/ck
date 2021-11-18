@@ -4,10 +4,6 @@ namespace CK.Entities
 {
     public class TradePostModel
     {
-
-        [Required]
-        public Guid Id { get; set; }
-
         [Required] 
         public DateTime Created { get { return DateTime.Now; } }
 
