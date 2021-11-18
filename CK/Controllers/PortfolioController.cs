@@ -1,4 +1,5 @@
-﻿using CK.Entities;
+﻿using CK.EF;
+using CK.Entities;
 using CK.PortfolioData;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,14 +42,15 @@ namespace CK.Controllers
         public IActionResult AddPortfolio(PortfolioPostModel portfolio)
         {
             //Get User
+
             //Compare if User exists
                 //return BadRequest("Error: Portfolio must have a valid User.");
 
             if (portfolio != null)
             {
-                _portfolioData.AddPortfolio(portfolio);
+                Portfolio newPortfolio = _portfolioData.AddPortfolio(portfolio);
 
-                return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + portfolio.Id, portfolio);
+                return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + newPortfolio.PortfolioId, newPortfolio);
             }
 
             return NotFound("Error: Portfolio cannot be empty");

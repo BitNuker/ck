@@ -7,7 +7,7 @@ namespace CK.EF
     {
         public User()
         {
-            Trades = new HashSet<Trade>();
+            Portfolios = new HashSet<Portfolio>();
         }
 
         public Guid UserId { get; set; }
@@ -23,6 +23,6 @@ namespace CK.EF
         public DateTime? TokenExpiration { get; set; }
         public DateTime? RefreshTokenExpiration { get; set; }
 
-        public virtual ICollection<Trade> Trades { get; set; }
+        public virtual ICollection<Portfolio> Portfolios { get; set; }
     }
 }

@@ -14,7 +14,8 @@ namespace CK.EF
         public decimal NumberOfShares { get; set; }
         public decimal Price { get; set; }
         public Currency Currency { get; set; }
-        public decimal MarketValue { get { return this.NumberOfShares * this.Price; } }
+
+        public decimal MarketValue { get { return this.NumberOfShares * this.Price; } set { MarketValue = value; } }
         public Action Action { get; set; }
         public string? Notes { get; set; }
         public string Asset { get; set; } = null!;

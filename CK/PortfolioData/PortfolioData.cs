@@ -66,8 +66,9 @@ namespace CK.PortfolioData
         {
             Portfolio portfolio = new Portfolio()
             {
-                PortfolioId = model.Id,
-                UserId = model.UserId, 
+                PortfolioId = Guid.NewGuid(),
+                UserId = model.UserId,
+                //User = GetUser
             };
             _context.Portfolios.Add(portfolio);
             _context.SaveChanges();

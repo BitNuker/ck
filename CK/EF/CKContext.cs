@@ -38,6 +38,12 @@ namespace CK.EF
                     .ValueGeneratedNever()
                     .HasColumnName("PortfolioID");
 
+                entity.HasOne(e => e.User)
+                    .WithMany(p => p.Portfolios)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Portfolio_User");
+
                 entity.Property(e => e.Balance).HasColumnType("money");
             });
 
@@ -77,11 +83,7 @@ namespace CK.EF
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_PortfolioTrade");
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Trades)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserTrade");
+
             });
 
             modelBuilder.Entity<User>(entity =>
