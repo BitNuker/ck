@@ -1,11 +1,13 @@
 using CK.EF;
 using CK.PortfolioData;
+using CK.TradeData;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IPortfolioData, PortfolioData>();
+builder.Services.AddScoped<ITradeData, TradeData>();
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<CKContext>(options =>

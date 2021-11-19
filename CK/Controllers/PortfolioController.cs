@@ -15,7 +15,7 @@ namespace CK.Controllers
         }
 
         [HttpGet, Route("portfolios/byUserId/{userId}")]
-        public IActionResult GetPortfolioByUserId(Guid userId)
+        public IActionResult GetPortfoliosByUserId(Guid userId)
         {
             var portfolios = _portfolioData.GetPortfoliosByUserId(userId);
             if (portfolios.Any())
@@ -25,11 +25,11 @@ namespace CK.Controllers
 
         }
 
-        [HttpGet, Route("portfolios/byPortfolioId/{portfolioid}")]
+        [HttpGet, Route("portfolios/byPortfolioId/{portfolioId}")]
 
-        public IActionResult GetPortfolioById(Guid portfolioid)
+        public IActionResult GetPortfolioById(Guid portfolioId)
         {
-            var portfolio = _portfolioData.GetPortfolioById(portfolioid);
+            var portfolio = _portfolioData.GetPortfolioById(portfolioId);
             if (portfolio != null)
                 return Ok(portfolio);
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using CK.EF.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
+using Action = CK.EF.Enum.Action;
 
 namespace CK.EF
 {

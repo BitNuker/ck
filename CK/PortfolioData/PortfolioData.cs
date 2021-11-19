@@ -1,9 +1,5 @@
 ﻿using CK.EF;
 using CK.Entities;
-using Action = CK.Entities.Action;
-using Currency = CK.EF.Currency;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace CK.PortfolioData
 {
@@ -70,8 +66,8 @@ namespace CK.PortfolioData
             {
                 PortfolioId = Guid.NewGuid(),
                 UserId = model.UserId,
-                //User = GetUser
             };
+
             _context.Portfolios.Add(portfolio);
             _context.SaveChanges();
             return portfolio;
